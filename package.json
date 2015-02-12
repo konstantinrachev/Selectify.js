@@ -1,0 +1,25 @@
+{
+  "name": "Selectify.js",
+  "version": "1.0.0",
+  "description": "A way to control your selects",
+  "homepage": "",
+  "repository": "konstantinrachev/Selectify.js",
+  "author": "Konstantin Rachev",
+  "license": "MIT",
+  "keywords": [
+	"select",
+	"loader",
+	"data",
+	"selectify.js"
+	"selectify"
+  ],
+  "devDependencies": {
+    "jshint": "latest",
+    "uglify-js": "latest"
+  },
+  "preferGlobal": true,
+  "files": [
+    "src/selectify.js",
+    "src/selectify.min.js"
+  ]
+}

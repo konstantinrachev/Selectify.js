@@ -1,0 +1,28 @@
+{
+	"name": "Selectify.js",
+	"main":	"Selectify.js",
+	"version": "1.0.0",
+	"authors": [
+		"Konstantin Rachev <konstantin.rachev.web@gmail.com>"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com:konstantinrachev/Selectify.js.git"
+		}, 
+	"description": "A way to control your selects",
+	"keywords": [
+		"select",
+		"loader",
+		"data",
+		"selectify.js"
+		"selectify"
+	],
+	"license": "MIT",
+	"ignore": [
+	    "**/.*",
+	    "node_modules",
+	    "bower_components",
+	    "test",
+	    "tests"
+	]
+}

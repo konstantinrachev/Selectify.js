@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Selectify.js</title>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+		<style type="text/css">
+		.footer {
+		  position: absolute;
+		  bottom: 0;
+		  width: 100%;
+		  /* Set the fixed height of the footer here */
+		  height: 60px;
+		  background-color: #f5f5f5;
+		}
+		.text-muted {
+		  margin: 20px 0;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					
+					<div class="page-header">
+						<h1>Selectify.js <small>A way to control your selects</small></h1>
+					</div>
+
+					<p class="lead">A plugin for painless content loading into your select-boxes.</p>
+
+					<form method="post" action="#" role="form">
+
+						<label for="try">I am super cool select, hmmm but I am single</label>
+						<select name="try" class="form-control" id="mySelect" data-target="Municipalities" required>
+							<option value="">--- Pick something from the list</option>
+							<option value="1">My first and single option</option>
+							<option value="2">My second and not single option</option>
+							<option value="3">My third option</option>
+							<option value="4">Aaaand whatever</option>
+						</select>
+
+			 			<label for="foo">Here is about to come a field. :)</label>
+						<select name="foo" class="form-control" required></select>
+						<br>
+
+						<label for="test">Test</label>
+						<select name="test" class="form-control" id="test" required></select>
+
+					</form>
+					
+				</div>
+			</div>
+		</div>
+		
+	    <footer class="footer">
+	      <div class="container">
+	        <p class="text-muted">Selectify.js by <a href="mailto:konstantin.rachev.web@gmail.com">Konstantin Rachev</a></p>
+	      </div>
+	    </footer>
+
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="src/selectify.js"></script>
+		<script type="text/javascript">
+			$('select[name=foo]').hide();
+			$('#mySelect').selectify({
+				data: {
+					content: 'http://www.json-generator.com/api/json/get/cfwQYLXdki?indent=2',
+					opt: 'index',
+					val: 'company'
+				},
+				container: 'foo',
+				placeholder: 'Choose from the list',
+				ishidden: true,
+				listenOn: 'change'
+			});
+
+			$('select[name=foo]').selectify({
+				data: {
+					content: 'http://www.json-generator.com/api/json/get/cfwQYLXdki?indent=2',
+					opt: 'email',
+					val: 'eyeColor',
+				},
+				container: '#test'
+			});
+		</script>
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	</body>
+</html>
