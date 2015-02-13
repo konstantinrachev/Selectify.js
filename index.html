@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Selectify.js by konstantinrachev</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Selectify.js</h1>
+        <p>A way to control your selects</p>
+
+        <p class="view"><a href="https://github.com/konstantinrachev/Selectify.js">View the Project on GitHub <small>konstantinrachev/Selectify.js</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/konstantinrachev/Selectify.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/konstantinrachev/Selectify.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/konstantinrachev/Selectify.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="selectifyjs" class="anchor" href="#selectifyjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Selectify.js</h1>
+
+<h3>
+<a id="a-way-to-control-your-selects" class="anchor" href="#a-way-to-control-your-selects" aria-hidden="true"><span class="octicon octicon-link"></span></a>A way to control your selects</h3>
+
+<ul>
+<li>The single dependency of Selectify.js is jQuery</li>
+<li>Include it and init, that's it</li>
+</ul>
+
+<h3>
+<a id="what-you-can-do-with-selectifyjs" class="anchor" href="#what-you-can-do-with-selectifyjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you can do with Selectify.js</h3>
+
+<ul>
+<li>Trigger data load on another select change value</li>
+<li>Trigger data load on page load </li>
+<li>Show the field as soon as you load the requested data</li>
+<li>Set dynamic data to your select-boxes</li>
+<li>Set placeholders for your select-boxes</li>
+<li>Listen for particular event to load the wanted data</li>
+<li>Show already hidden fields, however this time with the needed data</li>
+</ul>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>You ought to initialize Selectify.js on a select element which you want to listen on for an event.</p>
+
+<h2>
+<a id="1-use-both-html--javascript" class="anchor" href="#1-use-both-html--javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Use both html &amp; javascript</h2>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">select</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>try<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>form-control<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s1"><span class="pl-pds">"</span>mySelect<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">select</span>&gt;
+
+&lt;<span class="pl-ent">select</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>form-control<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">select</span>&gt;</pre></div>
+
+<p>Then include jquery and Selectify.js or Selectify.min.js</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s1"><span class="pl-pds">'</span>select[name=foo]<span class="pl-pds">'</span></span>).hide();
+$(<span class="pl-s1"><span class="pl-pds">'</span>#mySelect<span class="pl-pds">'</span></span>).selectify({
+    data<span class="pl-k">:</span> {
+        content<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>data.json<span class="pl-pds">'</span></span>,
+        opt<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>,
+        val<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>
+    },
+    container<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>,
+    placeholder<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Choose from the list<span class="pl-pds">'</span></span>,
+    ishidden<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+    listenOn<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>change<span class="pl-pds">'</span></span>
+});</pre></div>
+
+<p>That's it, you are up &amp; running.</p>
+
+<h2>
+<a id="2-use-html-data--attributes-and-just-init-using-javascript" class="anchor" href="#2-use-html-data--attributes-and-just-init-using-javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Use html data-* attributes and just init using javascript</h2>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">select</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>try<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>form-control<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s1"><span class="pl-pds">"</span>mySelect<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">select</span>&gt;
+
+&lt;<span class="pl-ent">select</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>form-control<span class="pl-pds">"</span></span> <span class="pl-e">data-content</span>=<span class="pl-s1"><span class="pl-pds">"</span>data.json<span class="pl-pds">"</span></span> <span class="pl-e">data-opt</span>=<span class="pl-s1"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span> <span class="pl-e">data-val</span>=<span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-e">data-placeholder</span>=<span class="pl-s1"><span class="pl-pds">"</span>Choose<span class="pl-pds">"</span></span> <span class="pl-e">data-listenOn</span>=<span class="pl-s1"><span class="pl-pds">"</span>click<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">select</span>&gt;</pre></div>
+
+<p>Then include jquery and Selectify.js or Selectify.min.js</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s1"><span class="pl-pds">'</span>select[name=foo]<span class="pl-pds">'</span></span>).hide();
+$(<span class="pl-s1"><span class="pl-pds">'</span>#mySelect<span class="pl-pds">'</span></span>).selectify();</pre></div>
+
+<h1>
+<a id="available-options" class="anchor" href="#available-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available options</h1>
+
+<h3>
+<a id="data--content--string" class="anchor" href="#data--content--string" aria-hidden="true"><span class="octicon octicon-link"></span></a>data: { content } (string)</h3>
+
+<p>Represents the needed data to load in JSON format. It can be either a function or json file.</p>
+
+<div class="highlight highlight-javascript"><pre>data {
+  content<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>data.json<span class="pl-pds">'</span></span>,
+  opt<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span>,
+  val<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>
+}</pre></div>
+
+<h3>
+<a id="data--opt--string" class="anchor" href="#data--opt--string" aria-hidden="true"><span class="octicon octicon-link"></span></a>data: { opt } (string)</h3>
+
+<p>The object attribute, which will be set as value parameter for each option. </p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">option</span> <span class="pl-e">value</span>=<span class="pl-s1"><span class="pl-pds">"</span>opt<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">option</span>&gt; </pre></div>
+
+<h3>
+<a id="data--val--string" class="anchor" href="#data--val--string" aria-hidden="true"><span class="octicon octicon-link"></span></a>data: { val } (string)</h3>
+
+<p>The object attribute, which will be set as text for each option. </p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">option</span> <span class="pl-e">value</span>=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>&gt;val&lt;/<span class="pl-ent">option</span>&gt; </pre></div>
+
+<h3>
+<a id="container-string" class="anchor" href="#container-string" aria-hidden="true"><span class="octicon octicon-link"></span></a>container (string)</h3>
+
+<p>The container name(must be a select) in which we will load the data. It can be either:</p>
+
+<ul>
+<li>#myField -&gt; Selectify.js will search for element with id equeal to myField</li>
+<li>.myField -&gt; Selectify.js will search for element with class equeal to myField</li>
+<li>myField  -&gt; Selectify.js will search for element with name equeal to myField</li>
+</ul>
+
+<h3>
+<a id="placeholder-string" class="anchor" href="#placeholder-string" aria-hidden="true"><span class="octicon octicon-link"></span></a>placeholder (string)</h3>
+
+<p>A string in which you can put a particular text to be appended before data load.</p>
+
+<h3>
+<a id="toremove-boolean" class="anchor" href="#toremove-boolean" aria-hidden="true"><span class="octicon octicon-link"></span></a>toRemove (boolean)</h3>
+
+<p>Tell Selectify.js if you want to remove all current options into the container and then append the new data.</p>
+
+<h3>
+<a id="ishidden-boolean" class="anchor" href="#ishidden-boolean" aria-hidden="true"><span class="octicon octicon-link"></span></a>ishidden (boolean)</h3>
+
+<p>Indicate if the container element is already hidden. If is set to true, the container will be shown after data load.</p>
+
+<h3>
+<a id="listenon-string" class="anchor" href="#listenon-string" aria-hidden="true"><span class="octicon octicon-link"></span></a>listenOn (string)</h3>
+
+<p>Indicate the event you want Selectify.js to trigger on. The plugin listens on the object on which it is initialized. </p>
+
+<ul>
+<li>If it is not specified the data will be loaded as soon as the page render finishes.</li>
+</ul>
+
+<h1>
+<a id="defaults" class="anchor" href="#defaults" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defaults</h1>
+
+<p>The default data loadded. However you need to set all data attibutes in order to run Selectify.js propertly.</p>
+
+<div class="highlight highlight-javascript"><pre>container<span class="pl-k">:</span> <span class="pl-c1">null</span>, <span class="pl-c">// The container we are willing to fill with data</span>
+ishidden<span class="pl-k">:</span> <span class="pl-c1">false</span>, <span class="pl-c">// Is this container hidden, if yes - then show</span>
+data<span class="pl-k">:</span> {
+    content<span class="pl-k">:</span> <span class="pl-c1">null</span>, <span class="pl-c">// The content we need, which returns JSON formatted data, you can set either json file or function</span>
+    opt<span class="pl-k">:</span> <span class="pl-c1">null</span>, <span class="pl-c">// The JSON object param we are setting as value</span>
+    val<span class="pl-k">:</span> <span class="pl-c1">null</span> <span class="pl-c">// The JSON object param we are setting as option content</span>
+},
+listenOn<span class="pl-k">:</span> <span class="pl-c1">null</span>, <span class="pl-c">// The jQuery event we are willing to trigger our selectify.js on</span>
+toRemove<span class="pl-k">:</span> <span class="pl-c1">true</span> <span class="pl-c">// Do we want to remove all the set options before appending the new one</span></pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/konstantinrachev">konstantinrachev</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
