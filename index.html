@@ -36,7 +36,7 @@
 					<form method="post" action="#" role="form">
 
 						<label for="try">I am super cool select, hmmm but I am single</label>
-						<select name="try" class="form-control">
+						<select name="try" id="mySelect" class="form-control" >
 							<option value="">--- Pick something from the list</option>
 							<option value="1">My first and single option</option>
 							<option value="2">My second and not single option</option>
@@ -45,7 +45,7 @@
 						</select>
 
 			 			<label for="foo">Here is about to come a field. :)</label>
-						<select name="foo" class="form-control"></select>
+						<select name="foo" class="form-control" data-content="http://www.json-generator.com/api/json/get/cfwQYLXdki?indent=2"></select>
 						<br>
 
 						<label for="test">Test</label>
@@ -67,6 +67,7 @@
 		<script src="src/selectify.js"></script>
 		<script type="text/javascript">
 			$('select[name=foo]').hide();
+
 			$('#mySelect').selectify({
 				data: {
 					content: 'http://www.json-generator.com/api/json/get/cfwQYLXdki?indent=2',
@@ -81,9 +82,8 @@
 
 			$('select[name=foo]').selectify({
 				data: {
-					content: 'http://www.json-generator.com/api/json/get/cfwQYLXdki?indent=2',
-					opt: 'email',
-					val: 'eyeColor',
+					opt: 'company',
+					val: 'index'
 				},
 				container: '#test'
 			});

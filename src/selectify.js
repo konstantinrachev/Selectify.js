@@ -49,7 +49,7 @@
 		*/
 		this.$el = current;
 		this.isHidden = (this.$el.data('ishidden') ? this.$el.data('ishidden') : this.settings.ishidden);
-		this.dataHandler = (this.$el.data('data') ? this.$el.data('data') : this.settings.data.content);
+		this.dataHandler = (this.$el.data('content') ? this.$el.data('content') : this.settings.data.content);
 		this.dataOpt = (this.$el.data('opt') ? this.$el.data('opt') : this.settings.data.opt);
 		this.dataVal = (this.$el.data('val') ? this.$el.data('val') : this.settings.data.val);
 		this.placeholder = (this.$el.data('placeholder') ? this.$el.data('placeholder') : this.settings.placeholder);
