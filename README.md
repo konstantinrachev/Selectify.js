@@ -28,7 +28,6 @@ You ought to initialize Selectify.js on a select element which you want to liste
 Then include jquery and Selectify.js or Selectify.min.js
 
 ```javascript
-$('select[name=foo]').hide();
 $('#mySelect').selectify({
 	data: {
 		content: 'data.json',
@@ -37,7 +36,6 @@ $('#mySelect').selectify({
 	},
 	container: 'foo',
 	placeholder: 'Choose from the list',
-	ishidden: true,
 	listenOn: 'change'
 });
 ```
