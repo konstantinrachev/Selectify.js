@@ -51,7 +51,6 @@ That's it, you are up & running.
 Then include jquery and Selectify.js or Selectify.min.js
 
 ```javascript
-$('select[name=foo]').hide();
 $('#mySelect').selectify();
 ```
 
