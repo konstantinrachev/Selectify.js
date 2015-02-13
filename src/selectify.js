@@ -50,8 +50,8 @@
 		this.$el = current;
 		this.isHidden = (this.$el.data('ishidden') ? this.$el.data('ishidden') : this.settings.ishidden);
 		this.dataHandler = (this.$el.data('data') ? this.$el.data('data') : this.settings.data.content);
-		this.dataOpt = (this.$el.data('data-opt') ? this.$el.data('data-opt') : this.settings.data.opt);
-		this.dataVal = (this.$el.data('data-val') ? this.$el.data('data-val') : this.settings.data.val);
+		this.dataOpt = (this.$el.data('opt') ? this.$el.data('opt') : this.settings.data.opt);
+		this.dataVal = (this.$el.data('val') ? this.$el.data('val') : this.settings.data.val);
 		this.placeholder = (this.$el.data('placeholder') ? this.$el.data('placeholder') : this.settings.placeholder);
 		this.listenOn = (this.$el.data('listenOn') ? this.$el.data('listenOn') : this.settings.listenOn);
 		this.toRemove = (this.$el.data('toRemove') ? this.$el.data('toRemove') : this.settings.toRemove);
