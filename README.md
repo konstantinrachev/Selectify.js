@@ -51,7 +51,7 @@ That's it, you are up & running.
 Then include jquery and Selectify.js or Selectify.min.js
 
 ```javascript
-$('#mySelect').selectify();
+$('select[name=foo]').selectify();
 ```
 
 # Available options
