@@ -1,5 +1,7 @@
 # Selectify.js
 
+### Check out the docs [http://documentup.com/konstantinrachev/Selectify.js](here).
+
 ### A way to control your selects
 
 * The single dependency of Selectify.js is jQuery
