@@ -1,6 +1,6 @@
 # Selectify.js
 
-### Check out the docs [http://documentup.com/konstantinrachev/Selectify.js](here).
+### Check out [the docs](http://documentup.com/konstantinrachev/Selectify.js).
 
 ### A way to control your selects
 
